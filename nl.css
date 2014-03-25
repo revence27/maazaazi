@@ -1,0 +1,180 @@
+@charset "UTF-8";
+body {
+  font-family: "Alegreya", "Goudy Bookletter 1911";
+  font-family: 11pt; }
+  body strong {
+    font-weight: bold;
+    font-style: italic; }
+  body dl {
+    column-count: 2; }
+    body dl.calendar {
+      font-size: 75%;
+      border: solid 1px maroon;
+      padding: 0em;
+      padding-left: 0.5em; }
+    body dl dt {
+      margin: 0px;
+      font-family: "Alegreya Sans", "Quattrocento Sans"; }
+    body dl dd {
+      margin: 0px;
+      margin-left: 1em;
+      text-indent: 0px; }
+  body ol {
+    list-style: lower-roman; }
+    body ol li:marker {
+      font-style: italic; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Alegreya Sans SC", "Alegreya SC";
+    margin: 0px;
+    color: maroon; }
+  body #score {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5em; }
+    body #score thead {
+      font-weight: normal;
+      color: #fefef9;
+      background: #374d91;
+      font-family: "Alegreya SC", "Quattrocento Roman"; }
+    body #score td {
+      vertical-align: top;
+      border-bottom: solid 1px maroon;
+      hyphens: none; }
+      body #score td.first {
+        font-family: "Alegreya SC", "Quattrocento Roman";
+        text-align: center;
+        vertical-align: middle; }
+      body #score td.erinnya {
+        text-align: left !important; }
+      body #score td.last {
+        text-align: right !important;
+        font-family: "Quattrocento Sans", "Liberation Mono";
+        font-size: 75%;
+        vertical-align: middle;
+        width: 3em;
+        padding-right: 1em; }
+  body #main .header {
+    font-family: "Alegreya Sans", "Quattrocento Sans";
+    color: #374d91;
+    background: #fefef9; }
+    body #main .header table {
+      width: 100%; }
+      body #main .header table tbody tr td.contacts {
+        text-align: center;
+        width: 25%; }
+        body #main .header table tbody tr td.contacts .nom {
+          font-family: "Tangerine";
+          font-size: 200%;
+          font-weight: 900; }
+        body #main .header table tbody tr td.contacts .pic img {
+          height: 2cm; }
+        body #main .header table tbody tr td.contacts .motto {
+          font-size: 75%;
+          font-family: "Alegreya SC", "Quattrocento Roman";
+          font-weight: bold; }
+      body #main .header table tbody tr td.nom {
+        text-align: center;
+        background: #374d91;
+        color: #fefef9; }
+        body #main .header table tbody tr td.nom .diocese {
+          font-family: "Tangerine";
+          font-size: 200%;
+          font-weight: 900; }
+        body #main .header table tbody tr td.nom .thename {
+          font-family: "Fenwick Outline";
+          font-size: 300%; }
+        body #main .header table tbody tr td.nom .community {
+          content: " —" content() "— ";
+          font-size: 75%; }
+  body #main .curdate {
+    font-family: "Quattrocento Sans", "Liberation Mono";
+    text-align: right;
+    color: maroon;
+    font-weight: bold;
+    font-size: 50%;
+    string-set: edition content(); }
+  body #main .trunk {
+    column-count: 2; }
+    body #main .trunk .article h1 {
+      font-family: "Alegreya Sans SC", "Alegreya SC";
+      font-size: 100%;
+      margin: 0px;
+      margin-top: 1em;
+      string-set: curhead content(); }
+    body #main .trunk .article .picture {
+      width: 100%;
+      text-align: center; }
+      body #main .trunk .article .picture.insider {
+        float: right;
+        display: inline; }
+    body #main .trunk .article .caption {
+      font-family: "Alegreya Sans", "Quattrocento Sans";
+      font-weight: bold;
+      font-style: italic;
+      font-size: 75%;
+      text-align: center; }
+    body #main .trunk .article .copy {
+      font-variant-settings: "diag", "dlig";
+      font-size: 93%; }
+      body #main .trunk .article .copy .gallery {
+        border-collapse: collapse;
+        width: 100%; }
+        body #main .trunk .article .copy .gallery tr td {
+          width: 33.3%;
+          text-align: center; }
+        body #main .trunk .article .copy .gallery tr.pics {
+          vertical-align: bottom; }
+          body #main .trunk .article .copy .gallery tr.pics img {
+            height: 2cm; }
+      body #main .trunk .article .copy p {
+        text-align: justify;
+        text-indent: 0.75em;
+        margin: 0px;
+        margin-top: 0.25em;
+        font-size: 95%; }
+        body #main .trunk .article .copy p:first {
+          margin-top: 0px; }
+        body #main .trunk .article .copy p .inset {
+          display: inline; }
+      body #main .trunk .article .copy .minhead {
+        display: inline;
+        text-decoration: underline;
+        font-weight: bold; }
+  body #main .footer {
+    flow: static(footer);
+    font-family: "Quattrocento Sans", "Liberation Mono";
+    font-size: 50%;
+    text-align: left; }
+
+@page {
+  margin: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+  font-family: "Alegreya Sans", "Quattrocento Sans";
+  font-size: 75%;
+  color: #374d91;
+  @top-left {
+    content: string(curhead, start) " (ebibulayo)";
+    font-family: "Alegreya Sans SC", "Alegreya SC";
+    font-style: italic; }
+
+  @top-right {
+    content: string(edition);
+    text-align: right;
+    font-weight: bold;
+    font-size: 80%; }
+
+  @bottom-right-corner {
+    content: counter(page);
+    text-align: center;
+    font-weight: 900; }
+
+  @bottom-center {
+    content: flow(footer); } }
+
+@page :first {
+  @top-left {
+    content: none; }
+
+  @top-right {
+    content: none; } }

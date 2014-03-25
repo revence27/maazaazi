@@ -1,0 +1,367 @@
+$diocfont: "Fenwick Outline";
+$namefont: "Tangerine";
+$disp1: "Alegreya Sans SC", "Alegreya SC";
+$disp2: "Alegreya SC", "Quattrocento Roman";
+$font1: "Alegreya", "Goudy Bookletter 1911";
+$font2: "Alegreya Sans", "Quattrocento Sans";
+$codfont: "Quattrocento Sans", "Liberation Mono";
+
+$mublue: rgb(55, 77, 145);
+$muwhite: rgb(254, 254, 249);
+$revcolor: maroon;
+
+body
+{
+  font-family: $font1;
+  font-family: 11pt;
+
+  strong
+  {
+    font-weight: bold;
+    font-style: italic;
+    //  font-variant: small-caps;
+  }
+
+  dl
+  {
+    column-count: 2;
+    &.calendar
+    {
+      font-size: 75%;
+      border: solid 1px $revcolor;
+      padding: 0em;
+      padding-left: 0.5em;
+    }
+
+    dt
+    {
+      margin: 0px;
+      font-family: $font2;
+    }
+
+    dd
+    {
+      margin: 0px;
+      margin-left: 1em;
+      text-indent: 0px;
+    }
+  }
+
+  ol
+  {
+    list-style: lower-roman;
+
+    li
+    {
+      &:marker
+      {
+        font-style: italic;
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6
+  {
+    font-family: $disp1;
+    margin: 0px;
+    color: $revcolor;
+  }
+
+  #score
+  {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5em;
+
+    thead
+    {
+      //  font-variant: small-caps;
+      font-weight: normal;
+      color: $muwhite;
+      background: $mublue;
+      font-family: $disp2;
+      //  background: $revcolor;
+    }
+
+    td
+    {
+      vertical-align: top;
+      //  border-bottom: solid 1px $mublue;
+      border-bottom: solid 1px $revcolor;
+      //  text-align: left!important;
+      hyphens: none;
+
+      &.first
+      {
+        //  font-family: $codfont;
+        font-family: $disp2;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      &.erinnya
+      {
+        text-align: left!important;
+      }
+
+      &.last
+      {
+        text-align: right!important;
+        font-family: $codfont;
+        font-size: 75%;
+        vertical-align: middle;
+        width: 3em;
+        padding-right: 1em;
+      }
+    }
+  }
+
+  #main
+  {
+    .header
+    {
+      font-family: $font2;
+      color: $mublue;
+      background: $muwhite;
+
+      table
+      {
+        width: 100%;
+
+        tbody
+        {
+          tr
+          {
+            td
+            {
+              &.contacts
+              {
+                text-align: center;
+                width: 25%;
+
+                .nom
+                {
+                  font-family: $namefont;
+                  font-size: 200%;
+                  font-weight: 900;
+                }
+
+                .pic
+                {
+                  img
+                  {
+                    height: 2cm;
+                  }
+                }
+
+                .motto
+                {
+                  font-size: 75%;
+                  font-family: $disp2;
+                  font-weight: bold;
+                }
+              }
+
+              &.nom
+              {
+                text-align: center;
+                background: $mublue;
+                color: $muwhite;
+
+                .diocese
+                {
+                  font-family: $namefont;
+                  font-size: 200%;
+                  font-weight: 900;
+                }
+
+                .thename
+                {
+                  font-family: $diocfont;
+                  font-size: 300%;
+                }
+
+                .community
+                {
+                  content: " —" content() "— ";
+                  font-size: 75%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .curdate
+    {
+      font-family: $codfont;
+      text-align: right;
+      color: $revcolor;
+      font-weight: bold;
+      font-size: 50%;
+      string-set: edition content();
+    }
+
+    .trunk
+    {
+      column-count: 2;
+
+      .article
+      {
+        h1
+        {
+          font-family: $disp1;
+          font-size: 100%;
+          margin: 0px;
+          margin-top: 1em;
+          string-set: curhead content();
+        }
+
+        .picture
+        {
+          width: 100%;
+          text-align: center;
+
+          &.insider
+          {
+            float: right;
+            display: inline;
+          }
+
+          img
+          {
+            
+          }
+        }
+
+        .caption
+        {
+          font-family: $font2;
+          font-weight: bold;
+          font-style: italic;
+          font-size: 75%;
+          text-align: center;
+        }
+
+        .copy
+        {
+          //  hyphens: auto;
+          font-variant-settings: "diag", "dlig";
+          font-size: 93%;
+
+          .gallery
+          {
+            border-collapse: collapse;
+            width: 100%;
+
+            tr
+            {
+              td
+              {
+                width: 33.3%;
+                text-align: center;
+              }
+
+              &.pics
+              {
+                vertical-align: bottom;
+                img
+                {
+                  //  width: 100%;
+                  height: 2cm;
+                }
+              }
+            }
+          }
+
+          p
+          {
+            text-align: justify;
+            text-indent: 0.75em;
+            margin: 0px;
+            margin-top: 0.25em;
+            font-size: 95%;
+
+            &:first
+            {
+              margin-top: 0px;
+            }
+
+            .inset
+            {
+              display: inline;
+            }
+          }
+
+          .minhead
+          {
+            display: inline;
+            //  content: " —" content();
+            text-decoration: underline;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .footer
+    {
+      flow: static(footer);
+      font-family: $codfont;
+      font-size: 50%;
+      text-align: left;
+    }
+  }
+}
+
+@page
+{
+  margin: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+  font-family: $font2;
+  font-size: 75%;
+  color: $mublue;
+
+  @top-left
+  {
+    content: string(curhead, start) " (ebibulayo)";
+    font-family: $disp1;
+    font-style: italic;
+    //  color: $revcolor;
+  }
+
+  @top-right
+  {
+    content: string(edition);
+    text-align: right;
+    font-weight: bold;
+    font-size: 80%;
+  }
+
+  @bottom-right-corner
+  {
+    content: counter(page);
+    text-align: center;
+    font-weight: 900;
+  }
+
+  @bottom-center
+  {
+    content: flow(footer);
+  }
+}
+
+@page:first
+{
+  @top-left
+  {
+    content: none;
+  }
+
+  @top-right
+  {
+    content: none;
+  }
+}
